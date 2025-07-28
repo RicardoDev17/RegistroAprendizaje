@@ -1,9 +1,13 @@
 import requests
 from datetime import datetime
+from dotenv import load_dotenv
+import os
 
-# Configuración de Telegram
-TOKEN = "7339579254:AAE3ex1K3oZ5blHRGpnlyt8lz-x1Eh0D0DU"
-CHAT_ID = "7646293409"
+# Cargar variables del archivo .env
+load_dotenv()
+
+TOKEN = os.getenv("TOKEN")
+CHAT_ID = os.getenv("CHAT_ID")
 
 def enviar_recordatorio():
     hora_actual = datetime.now().strftime("%H:%M")
